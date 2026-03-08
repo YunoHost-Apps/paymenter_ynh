@@ -14,6 +14,7 @@ maintainers = ["eric_G"]
 [upstream]
 license = "MIT"
 website = "https://paymenter.org/"
+demo = "https://demo.paymenter.org/"
 admindoc = "https://paymenter.org/docs/installation/install"
 code = "https://github.com/Paymenter/Paymenter"
 
