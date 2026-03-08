@@ -54,7 +54,7 @@ pushd $install_dir
 	php$php_version artisan key:generate --force
 	php$php_version artisan storage:link
 	php$php_version artisan migrate --force --seed
-	php$php_version artisan db:seed --class=CustomPropertySeeder -yes
+	php$php_version artisan db:seed --class=CustomPropertySeeder --force
 popd
 
 #=================================================
