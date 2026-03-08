@@ -26,14 +26,14 @@ ynh_app_setting_set_default --key=php_post_max_size --value=50M
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir"
+ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression "Updating $app's configuration files..."
+#ynh_script_progression "Updating $app's configuration files..."
 
-ynh_config_add --template=".env" --destination="$install_dir/.env"
+#ynh_config_add --template=".env" --destination="$install_dir/.env"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
@@ -54,7 +54,10 @@ yunohost service add "$app" --description="Webshop solution for hostings" --log=
 ynh_script_progression "Install $app"
 
 pushd $install_dir
-	php$php_version artisan app:upgrade --force
+	php$php_version artisan down
+	php$php_version artisan migrate --force --seed
+	php$php_version artisan optimize:clear
+	php$php_version artisan up
 popd
 
 #=================================================
