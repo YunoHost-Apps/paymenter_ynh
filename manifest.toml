@@ -7,7 +7,7 @@ name = "Paymenter"
 description.en = "Webshop solution for hostings"
 description.fr = "Webshop solution for hostings"
 
-version = "1.4.7~ynh1"
+version = "1.4.7~ynh2"
 
 maintainers = ["eric_G"]
 
@@ -79,7 +79,7 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.apt]
-    packages = "mariadb-server, php8.3-gd, php8.3-mysql, php8.3-mbstring, php8.3-bcmath, php8.3-xml, php8.3-curl, php8.3-zip, php8.3-intl, php8.3-redis, redis-server"
+    packages = "mariadb-server, php8.4-gd, php8.4-mysql, php8.4-mbstring, php8.4-bcmath, php8.4-xml, php8.4-curl, php8.4-zip, php8.4-intl, php8.4-redis, redis-server"
 
     [resources.database]
     type = "mysql"
