@@ -4,6 +4,7 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
+source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -53,12 +54,10 @@ yunohost service add "$app" --description="Webshop solution for hostings" --log=
 #=================================================
 ynh_script_progression "Install $app"
 
-pushd $install_dir
-	php$php_version artisan down
-	php$php_version artisan migrate --force --seed
-	php$php_version artisan optimize:clear
-	php$php_version artisan up
-popd
+exec_artisan "down"
+exec_artisan "migrate --force --seed"
+exec_artisan "optimize:clear"
+exec_artisan "up"
 
 #=================================================
 # START SYSTEMD SERVICE
