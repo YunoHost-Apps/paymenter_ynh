@@ -4,7 +4,6 @@
 # IMPORT GENERIC HELPERS
 #=================================================
 
-source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -55,13 +54,15 @@ yunohost service add "$app" --description="Webshop solution for hostings" --log=
 #=================================================
 ynh_script_progression "Install $app"
 
-exec_artisan "key:generate --force"
-exec_artisan "storage:link"
-exec_artisan "migrate --force --seed"
-exec_artisan "db:seed --class=CustomPropertySeeder --force"
+pushd $install_dir
+	php$php_version artisan key:generate --force
+	php$php_version artisan storage:link
+	php$php_version artisan migrate --force --seed
+	php$php_version artisan db:seed --class=CustomPropertySeeder --force
 
-exec_artisan "app:init $app $domain"
-#exec_artisan "app:user:create $first_name $last_name $email $password admin"
+	php$php_version artisan app:init $app $domain
+	#php$php_version artisan app:user:create "$first_name" "$last_name" "$email" "$password" "admin"
+popd
 
 #=================================================
 # START SYSTEMD SERVICE
