@@ -7,7 +7,7 @@ name = "Paymenter"
 description.en = "Webshop solution for hostings"
 description.fr = "Webshop solution for hostings"
 
-version = "1.5.2~ynh1"
+version = "1.5.2~ynh2"
 
 maintainers = ["eric_G"]
 
