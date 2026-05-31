@@ -58,6 +58,11 @@ ram.runtime = "50M"
     help.fr = "Utilisez le champ aide pour ajouter une information à l'intention de l'administrateur à propos de cette question."
     type = "password"
 
+    [install.shop_name]
+    type = "text"
+    help.en = "Choose the name of the shop which will be displayed in the website's header."
+    help.fr = "Choisissez le nom du shop qui va sera affiche dans le site."
+
 [resources]
 
     [resources.sources]

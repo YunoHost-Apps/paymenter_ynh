@@ -60,8 +60,8 @@ pushd $install_dir
 	php$php_version artisan migrate --force --seed
 	php$php_version artisan db:seed --class=CustomPropertySeeder --force
 
-	php$php_version artisan app:init $app $domain
-	#php$php_version artisan app:user:create "$first_name" "$last_name" "$email" "$password" "admin"
+	php$php_version artisan app:init "$shop_name" "https://$domain"
+	php$php_version artisan app:user:create "$first_name" "$last_name" "$email" "$password" "admin"
 popd
 
 #=================================================
