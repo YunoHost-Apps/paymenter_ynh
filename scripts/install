@@ -12,6 +12,7 @@ source /usr/share/yunohost/helpers
 
 ynh_app_setting_set --key=php_upload_max_filesize --value=50M
 ynh_app_setting_set --key=php_post_max_size --value=50M
+ynh_app_setting_set --key=shop_name --value=$shop_name
 
 first_name=$(ynh_user_get_info --username="$admin" --key=firstname)
 last_name=$(ynh_user_get_info --username="$admin" --key=lastname)
@@ -60,8 +61,9 @@ pushd $install_dir
 	php$php_version artisan migrate --force --seed
 	php$php_version artisan db:seed --class=CustomPropertySeeder --force
 
-	php$php_version artisan app:init $app $domain
-	#php$php_version artisan app:user:create "$first_name" "$last_name" "$email" "$password" "admin"
+	php$php_version artisan app:init "$shop_name" "https://$domain"
+	# role ID 1 = admin
+	php$php_version artisan app:user:create "$first_name" "$last_name" "$email" "$password" 1
 popd
 
 #=================================================
