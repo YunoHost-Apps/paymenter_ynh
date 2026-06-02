@@ -7,7 +7,7 @@ name = "Paymenter"
 description.en = "Webshop solution for hostings"
 description.fr = "Webshop solution for hostings"
 
-version = "1.5.2~ynh2"
+version = "1.5.3~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -69,8 +69,8 @@ ram.runtime = "50M"
 
     [resources.sources.main]
     in_subdir = false
-    url = "https://github.com/Paymenter/Paymenter/releases/download/v1.5.2/paymenter.tar.gz"
-    sha256 = "bb7f458f502fa44466909e06e291393515b72bf30fdd4141f2cfda3818c42d10"
+    url = "https://github.com/Paymenter/Paymenter/releases/download/v1.5.3/paymenter.tar.gz"
+    sha256 = "0827e1486c183dc1af79758455035774073c4d4a3dc61aabb575d68a0f3959d8"
 
     autoupdate.strategy = "latest_github_release"
 
