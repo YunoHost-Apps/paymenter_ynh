@@ -69,8 +69,8 @@ ram.runtime = "50M"
 
     [resources.sources.main]
     in_subdir = false
-    url = "https://github.com/Paymenter/Paymenter/archive/refs/tags/v1.5.3.tar.gz"
-    sha256 = "229d7b5ae9be0827d1894ddbd63b96a78a270b4cdbcdaeb8cd9f5cbe39de41f5"
+    url = "https://github.com/Paymenter/Paymenter/releases/download/v1.5.3/paymenter.tar.gz"
+    sha256 = "0827e1486c183dc1af79758455035774073c4d4a3dc61aabb575d68a0f3959d8"
 
     autoupdate.strategy = "latest_github_release"
 
